@@ -6,12 +6,14 @@ RUN apk add --no-cache tor nginx openrc
 COPY torrc /etc/tor/
 RUN chown -R tor /etc/tor
 USER tor
-CMD tor -f /etc/tor/torrc
+RUN tor -f /etc/tor/torrc
 
+USER root
 COPY hostname.sh /
 COPY nginx.conf /etc/nginx/
-RUN hostname.sh
-COPY index.html /www/
+RUN /hostname.sh
+RUN cat index.html
+RUN mv /index.html /www/
 RUN adduser -D -g 'www' www
 RUN chown -R www:www /var/lib/nginx
 RUN chown -R www:www /www
