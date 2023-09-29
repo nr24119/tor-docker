@@ -7,7 +7,6 @@ RUN apk add --no-cache tor nginx
 COPY nginx.conf /etc/nginx/
 COPY index.html /www/
 RUN adduser -D -g 'www' www
-RUN mkdir /www
 RUN chown -R www:www /var/lib/nginx
 RUN chown -R www:www /www
 RUN rc-service nginx start
