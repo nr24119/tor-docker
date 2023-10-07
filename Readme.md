@@ -2,6 +2,6 @@
 Used for testing Onionbalance's Distinct Descriptor Mode
 
 Tasks:
-- Initilize Tor
+- Initialize Tor
 - Wait for Onion Services and Backend Instances to load up
-- Curl-Request for Load Testing
+- run curl-Requests for Load Testing (using a script)
