@@ -6,6 +6,6 @@ Tasks:
 - Wait for Onion Services and Backend Instances to load up
 - run curl-Requests for Load Testing (using a script)
 
-docker build <-t> <optionalName> .
+docker build -t torclient .
 
-docker run -d --restart always --name torclient <optionalName>
+docker run -d --restart always --name client1 torclient
