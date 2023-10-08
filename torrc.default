@@ -1,2 +1,4 @@
-HiddenServiceDir /var/lib/tor/hs/
-HiddenServicePort 80 nextcloud:80
+RunAsDaemon 1
+DataDirectory /var/lib/tor
+SocksPort 0
+ControlPort 127.0.0.1:6666
