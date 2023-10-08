@@ -7,7 +7,6 @@ COPY nginx.conf /etc/nginx/nginx.conf
 COPY torrc.default /etc/tor/torrc.default
 COPY index.html /var/lib/nginx/html/index.html
 RUN chown -R tor /etc/tor
-RUN chown -R www /etc/nginx
 # USER tor
 ENTRYPOINT [ "/sbin/tini", "--" ]
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
