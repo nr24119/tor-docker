@@ -20,11 +20,9 @@ RUN apk update && apk --no-cache upgrade && apk --no-cache add nginx tini superv
     # Delete apk cache to save some space.
     rm -rf /var/cache/apk/*
     
-COPY supervisord.conf /etc/supervisord.conf 
-COPY nginx.conf /etc/nginx/nginx.conf
+COPY supervisord.conf /etc/supervisord.conf
 
 COPY torrc.default /etc/tor/torrc.default
-COPY index.html /var/lib/nginx/html/index.html
 RUN chown -R tor /etc/tor
 
 ENTRYPOINT [ "/sbin/tini", "--" ]
