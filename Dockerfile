@@ -5,6 +5,7 @@ COPY supervisord.conf /etc/supervisord.conf
 # EXPOSE 9050
 COPY torrc.default /etc/tor/torrc.default
 RUN chown -R tor /etc/tor
+RUN chown -R tor /usr/bin/tor
 # USER tor
 # ENTRYPOINT [ "tor" ]
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
