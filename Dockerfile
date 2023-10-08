@@ -4,7 +4,7 @@ RUN apk update && apk --no-cache add curl && apk add --no-cache supervisor && ap
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf 
 # EXPOSE 9050
 COPY torrc.default /etc/tor/torrc.default
-# RUN chown -R tor /etc/tor
+RUN chown -R tor /etc/tor
 # USER tor
 # ENTRYPOINT [ "tor" ]
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
